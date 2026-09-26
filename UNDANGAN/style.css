@@ -1,0 +1,85 @@
+:root{
+  --bg: #f9f6f2;
+  --accent: #e8aeb3; /* blush */
+  --gold: #b59410; /* secondary gold accent */
+  --muted: #4a4a4a;
+  --white: #ffffff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased;line-height:1.5}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.hero{min-height:70vh;display:flex;align-items:center;justify-content:center;color:var(--white);background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;padding:40px}
+.hero-content{background:linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.02));backdrop-filter:blur(4px);padding:28px;border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
+
+h1{font-family:'Great Vibes',cursive;font-size:4.5rem;margin:8px 0}
+h2{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--accent)}
+
+.details{padding:60px 20px}
+.event-box{display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
+.event-item{background:var(--white);padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.06);width:320px}
+
+#countdown{display:flex;justify-content:center;gap:12px;margin-top:30px;flex-wrap:wrap}
+.time-unit{background:var(--accent);color:var(--white);padding:12px 18px;border-radius:10px;min-width:72px}
+.time-unit span{font-size:1.25rem;font-weight:700}
+
+.fade-in{opacity:0;transform:translateY(18px);transition:all .9s cubic-bezier(.2,.9,.3,1)}
+.fade-in.appear{opacity:1;transform:none}
+
+/* Overlay awal */
+#overlay{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;transition:transform .9s ease}
+.overlay-content{max-width:520px;padding:30px;text-align:center}
+.overlay-content h1{font-size:3rem;color:var(--accent);letter-spacing:1px}
+
+/* Decorative divider under couple names */
+.divider{display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gold);margin:8px 0}
+.divider::before,.divider::after{content:'';height:1px;background:linear-gradient(90deg, transparent, var(--gold), transparent);flex:1;margin:0 12px}
+.overlay-content button{padding:12px 28px;background:var(--accent);color:var(--white);border:0;border-radius:28px;cursor:pointer}
+
+/* Form RSVP */
+.rsvp{padding:60px 20px;background:var(--white)}
+.rsvp-form{max-width:520px;margin:24px auto;display:flex;flex-direction:column;gap:12px}
+.rsvp-form input,.rsvp-form select,.rsvp-form textarea{padding:12px;border-radius:8px;border:1px solid #e6e6e6;font-family:inherit}
+.rsvp-form button{background:#25d366;color:#fff;padding:12px;border:0;border-radius:8px;cursor:pointer;font-weight:700}
+
+iframe{margin-top:20px;border-radius:12px}
+
+/* Galeri */
+.gallery{padding:60px 20px;background:#fdfbf9}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:20px;max-width:1000px;margin-left:auto;margin-right:auto}
+.gallery-item{overflow:hidden;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+.gallery-item img{width:100%;height:220px;object-fit:cover;transition:transform .45s ease}
+.gallery-item:hover img{transform:scale(1.08)}
+
+/* Lightbox */
+.popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:10000;align-items:center;justify-content:center}
+.popup img{max-width:92%;max-height:82%;border-radius:6px}
+.popup .close{position:absolute;top:18px;right:28px;color:#fff;font-size:36px;cursor:pointer}
+
+/* Music control */
+.music-control{position:fixed;bottom:18px;right:18px;width:48px;height:48px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;z-index:999;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+
+@keyframes rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.gift{padding:50px 20px}
+.bank-card{background:var(--white);border:1px dashed var(--accent);padding:20px;border-radius:12px;max-width:360px;margin:18px auto}
+.bank-card button{margin-top:10px;background:#4a4a4a;color:#fff;border:0;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:.9rem}
+
+footer{padding:28px;background:#efefef;font-size:.85rem;text-align:center;margin-top:28px}
+
+/* Responsive tweaks */
+@media (max-width:768px){
+  h1{font-size:3rem}
+  h2{font-size:1.8rem}
+  .hero{min-height:60vh;padding:28px}
+  .gallery-item img{height:180px}
+  .event-item{width:100%}
+}
+
+@media (max-width:420px){
+  h1{font-size:2.4rem}
+  .overlay-content h1{font-size:2rem}
+  .music-control{width:44px;height:44px}
+}

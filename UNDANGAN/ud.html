@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Aisha & Farhan</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div id="overlay">
+    <div class="overlay-content">
+        <h2>Undangan Pernikahan</h2>
+        <p>Dengan hormat kami mengundang Anda untuk berbagi kebahagiaan</p>
+        <h1>Aisha & Farhan</h1>
+        <button onclick="openInvitation()">Buka Undangan</button>
+    </div>
+</div>
+<section class="gallery fade-in">
+    <div class="container">
+        <h2>Momen Bahagia Kami</h2>
+        <p>Kenangan indah yang ingin kami bagikan</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="zoomImage(this)">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=500&q=80" alt="Foto 1">
+            </div>
+            <div class="gallery-item" onclick="zoomImage(this)">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&q=80" alt="Foto 2">
+            </div>
+            <div class="gallery-item" onclick="zoomImage(this)">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=500&q=80" alt="Foto 3">
+            </div>
+            <div class="gallery-item" onclick="zoomImage(this)">
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=500&q=80" alt="Foto 4">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="imagePopup" class="popup" onclick="closePopup()">
+    <span class="close">&times;</span>
+    <img id="popupImg" src="">
+</div>
+
+<section class="rsvp fade-in">
+    <div class="container">
+        <h2>Konfirmasi Kehadiran</h2>
+        <p>Mohon konfirmasi kehadiran Anda melalui formulir di bawah ini:</p>
+        <form id="rsvpForm" class="rsvp-form">
+            <input type="text" id="name" placeholder="Nama Lengkap" required>
+            <select id="status">
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+            <textarea id="message" placeholder="Ucapan atau Doa"></textarea>
+            <button type="submit">Kirim via WhatsApp</button>
+        </form>
+    </div>
+</section>
+
+<section class="maps fade-in">
+    <h3>Lokasi Acara</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.273735163775!2d106.8249641!3d-6.2275605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTMnMzkuMiJTIDEwNsKwNDknMjkuOSJF!5e0!3m2!1sid!2sid!4v1625123456789" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h3>The Wedding of</h3>
+            <h1>Aisha & Farhan</h1>
+            <div class="divider">♡</div>
+            <p>20 . 06 . 2026 &nbsp;•&nbsp; Gedung Serbaguna Melati</p>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="container fade-in">
+            <h2>Acara Kami</h2>
+            <div class="event-box">
+                <div class="event-item">
+                    <h3>Akad Nikah</h3>
+                    <p>08.00 - 10.00 WIB</p>
+                    <p>Masjid Raya Pusat</p>
+                </div>
+                <div class="event-item">
+                    <h3>Resepsi</h3>
+                    <p>11.00 - Selesai</p>
+                    <p>Gedung Serbaguna Indah</p>
+                </div>
+            </div>
+
+            <div id="countdown">
+                <div class="time-unit"><span id="days">00</span><p>Hari</p></div>
+                <div class="time-unit"><span id="hours">00</span><p>Jam</p></div>
+                <div class="time-unit"><span id="minutes">00</span><p>Menit</p></div>
+                <div class="time-unit"><span id="seconds">00</span><p>Detik</p></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <section class="gift fade-in">
+        <div class="container">
+            <h2>Wedding Gift</h2>
+            <p>Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, dapat melalui nomor rekening berikut:</p>
+            
+            <div class="bank-card">
+                <img src="https://upload.wikimedia.org/wikipedia/id/thumb/e/e0/BCA_logo.svg/1280px-BCA_logo.svg.png" alt="BCA" width="80">
+                <p>Bank BCA</p>
+                <strong id="rekBCA">1234567890</strong>
+                <button onclick="copyText('rekBCA')">Salin No. Rekening</button>
+                <p>a.n. Aisha & Farhan</p>
+            </div>
+        </div>
+    </section>
+
+    <audio id="myAudio" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="musicControl" class="music-control" onclick="toggleMusic()">
+        <span id="musicIcon">🎵</span>
+    </div>
+
+    <footer style="padding: 40px; background: #eee; font-size: 0.8rem;">
+        <p>Dibuat dengan ❤️ oleh Kami</p>
+    </footer>
+
+</body>
+</html>
